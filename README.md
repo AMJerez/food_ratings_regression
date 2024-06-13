@@ -31,6 +31,7 @@ To clean the dataset, the following steps were taken:
 3. **Handling missing values:** Missing values in numerical columns were replaced with the median value of the respective column.
 
 ## Head of the DataFrame
+
 | name                                 |   minutes |   calories |   total_fat |   sugar |   sodium |   protein |   saturated_fat |   carbohydrates |    hours |
 |:-------------------------------------|----------:|-----------:|------------:|--------:|---------:|----------:|----------------:|----------------:|---------:|
 | 1 brownies in the world    best ever |        40 |      138.4 |          10 |      50 |        3 |         3 |              19 |               6 | 0.666667 |
@@ -67,7 +68,7 @@ To clean the dataset, the following steps were taken:
 |   2011 |          4.68762 |                3.93305 |
 |   2012 |          4.6829  |                1.66085 |
 
-**Interpretation:** This grouped table shows the average rating and average cooking time by year. It helps understand how these attributes have changed over time.
+**Interpretation:** This grouped table shows the average rating and average cooking time by year. It helps understand how these attributes have changed over time. It goes from 2008 all the way to 2018, this just includes the head.
 
 ## Assessment of Missingness
 
@@ -92,7 +93,6 @@ To analyze the dependency of missingness in the `description` column:
 - **Test Statistic:** The difference in mean ratings between the two groups.
 - **Significance Level:** α = 0.05
 
-[(Optional) There goes a graph for permutation test results]
 
 **Conclusion:** Since the p-value is 0.003, which is less than 0.05, we reject the null hypothesis. This suggests that there is a significant difference in the average ratings of recipes based on cooking time.
 
@@ -155,7 +155,6 @@ These parameters were selected using GridSearchCV, which performed an exhaustive
 **Evaluation:**
 The final model's performance, with a MAE of 0.45911961152511016, shows a slight improvement over the baseline model's MAE of 0.4615540502473202. This improvement, though modest, indicates that the additional features and the use of a more sophisticated modeling algorithm have helped capture more information about the recipes, leading to better predictions. The Gradient Boosting Regressor, with its ability to handle complex interactions and non-linearities, contributed to this improved performance.
 
-[(Optional) There goes a graph]
 
 ## Fairness Analysis
 
