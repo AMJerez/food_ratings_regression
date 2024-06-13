@@ -51,7 +51,6 @@ To clean the dataset, the following steps were taken:
   height="600"
   frameborder="0"
 ></iframe>
-
 **Interpretation:** The histogram of ratings shows that most recipes tend to have high ratings, indicating user satisfaction.
 
 ### Bivariate Analysis
@@ -64,7 +63,6 @@ To clean the dataset, the following steps were taken:
   height="600"
   frameborder="0"
 ></iframe>
-
 **Interpretation:** The scatter plot reveal the relationship between cooking time and ratings. It appears that recipes with shorter cooking times have a wide range of ratings, while longer cooking times might affect the ratings differently.
 
 ### Interesting Aggregates
@@ -114,7 +112,6 @@ The p-value of 0.189 indicates that the missingness of `description` does not de
   height="600"
   frameborder="0"
 ></iframe>
-
 **Graph of Permutation Test for `rating`:**
 <iframe
   src="assets/nondependency_rating.html"
@@ -122,7 +119,6 @@ The p-value of 0.189 indicates that the missingness of `description` does not de
   height="600"
   frameborder="0"
 ></iframe>
-
 The results of these tests are significant for `n_ingredients`, indicating that the missingness of the `description` column is dependent on the number of ingredients but not on the rating. This insight helps in understanding the data generation process and can guide further data cleaning and analysis steps.
 
 ## Hypothesis Testing
