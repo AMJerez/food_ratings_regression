@@ -30,19 +30,20 @@ To clean the dataset, the following steps were taken:
 2. **Creating 'hours' column:** The `minutes` column was converted to hours for easier interpretation.
 3. **Handling missing values:** Missing values in numerical columns were replaced with the median value of the respective column.
 
-## Head of the DataFrame
+<center>**Head of the DataFrame**</center>
 
-| name                                 |   minutes |   calories |   total_fat |   sugar |   sodium |   protein |   saturated_fat |   carbohydrates |    hours |
-|:-------------------------------------|----------:|-----------:|------------:|--------:|---------:|----------:|----------------:|----------------:|---------:|
-| 1 brownies in the world    best ever |        40 |      138.4 |          10 |      50 |        3 |         3 |              19 |               6 | 0.666667 |
-| 1 in canada chocolate chip cookies   |        45 |      595.1 |          46 |     211 |       22 |        13 |              51 |              26 | 0.75     |
-| 412 broccoli casserole               |        40 |      194.8 |          20 |       6 |       32 |        22 |              36 |               3 | 0.666667 |
-| millionaire pound cake               |       120 |      878.3 |          63 |     326 |       13 |        20 |             123 |              39 | 2        |
-| 2000 meatloaf                        |        90 |      267   |          30 |      12 |       12 |        29 |              48 |               2 | 1.5      |
+| name                             | id     | minutes | contributor_id | protein | saturated_fat | carbohydrates | hours |
+|----------------------------------|--------|---------|----------------|---------|---------------|---------------|-------|
+| 1 brownies in the world best ever| 333281 | 40      | 985201         | 3.0     | 19.0          | 6.0           | 0.67  |
+| 1 in canada chocolate chip cookies| 453467 | 45      | 1848091        | 13.0    | 51.0          | 26.0          | 0.75  |
+| 412 broccoli casserole           | 306168 | 40      | 50969          | 22.0    | 36.0          | 3.0           | 0.67  |
+| millionaire pound cake           | 286009 | 120     | 461724         | 20.0    | 123.0         | 39.0          | 2.00  |
+| 2000 meatloaf                    | 475785 | 90      | 2202916        | 29.0    | 48.0          | 2.0           | 1.50  |
+
 
 ### Univariate Analysis
 
-**Distribution of Ratings**
+<center>**Distribution of Ratings**</center>
 
 [There goes a graph]
 
@@ -50,7 +51,7 @@ To clean the dataset, the following steps were taken:
 
 ### Bivariate Analysis
 
-**Relationship Between Cooking Time and Rating**
+<center>**Relationship Between Cooking Time and Rating**</center>
 
 [There goes a graph]
 
@@ -58,7 +59,7 @@ To clean the dataset, the following steps were taken:
 
 ### Interesting Aggregates
 
-**Average Rating and Cooking Time by Year**
+<center>**Average Rating and Cooking Time by Year**</center>
 
 |   year |   average_rating |   average_cooking_time |
 |-------:|-----------------:|-----------------------:|
