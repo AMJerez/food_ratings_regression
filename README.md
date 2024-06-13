@@ -30,7 +30,7 @@ To clean the dataset, the following steps were taken:
 2. **Creating 'hours' column:** The `minutes` column was converted to hours for easier interpretation.
 3. **Handling missing values:** Missing values in numerical columns were replaced with the median value of the respective column.
 
-<center>**Head of the DataFrame**</center>
+**Head of the DataFrame**
 
 | name                             | id     | minutes | contributor_id | protein | saturated_fat | carbohydrates | hours |
 |----------------------------------|--------|---------|----------------|---------|---------------|---------------|-------|
@@ -43,7 +43,7 @@ To clean the dataset, the following steps were taken:
 
 ### Univariate Analysis
 
-<center>**Distribution of Ratings**</center>
+<center><b>Distribution of Ratings</b></center>
 
 [There goes a graph]
 
@@ -51,7 +51,7 @@ To clean the dataset, the following steps were taken:
 
 ### Bivariate Analysis
 
-<center>**Relationship Between Cooking Time and Rating**</center>
+<center><b>Relationship Between Cooking Time and Rating</b></center>
 
 [There goes a graph]
 
@@ -59,7 +59,7 @@ To clean the dataset, the following steps were taken:
 
 ### Interesting Aggregates
 
-<center>**Average Rating and Cooking Time by Year**</center>
+<center><b>Average Rating and Cooking Time by Year</b></center>
 
 |   year |   average_rating |   average_cooking_time |
 |-------:|-----------------:|-----------------------:|
