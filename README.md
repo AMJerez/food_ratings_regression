@@ -142,9 +142,24 @@ The results of these tests are significant for `n_ingredients`, indicating that 
 
 **Type:** Regression
 
-**Response Variable:** `rating`
+**Response Variable:** `rating` - The rating given to a recipe by users. This is chosen because the goal is to understand what factors influence the perceived quality of recipes as rated by users.
 
-**Features:** `minutes`, `n_ingredients`, `n_steps`, `calories`, `total_fat`, `sugar`, `sodium`, `protein`, `saturated_fat`, `carbohydrates`, `year`
+**Features:** 
+- `minutes` - The time taken to prepare the recipe.
+- `n_ingredients` - The number of ingredients used in the recipe.
+- `n_steps` - The number of steps required to prepare the recipe.
+- `calories` - The calorie content of the recipe.
+- `total_fat` - The total fat content of the recipe.
+- `sugar` - The sugar content of the recipe.
+- `sodium` - The sodium content of the recipe.
+- `protein` - The protein content of the recipe.
+- `saturated_fat` - The saturated fat content of the recipe.
+- `carbohydrates` - The carbohydrate content of the recipe.
+- `year` - The year the recipe was submitted.
+
+**Metric for Evaluation:** Mean Absolute Error (MAE) - This metric is chosen because it provides a straightforward measure of the average magnitude of errors in predictions, without considering their direction. MAE is suitable for regression problems as it is easy to interpret and understand.
+
+**Justification of Features:** The features selected are all available at the time the recipe is submitted. We are not using any features that would only be known after the recipe has been rated (e.g., number of reviews). This ensures that our model is trained using information that would be available at the time of prediction, making it a fair and realistic prediction task.
 
 ## Baseline Model
 
