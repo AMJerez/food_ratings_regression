@@ -50,6 +50,7 @@ To clean the dataset, the following steps were taken:
   width="800"
   height="600"
   frameborder="0"
+  style="display: block; margin: 0 auto; padding: 0;"
 ></iframe>
 **Interpretation:** The histogram of ratings shows that most recipes tend to have high ratings, indicating user satisfaction.
 
@@ -111,7 +112,9 @@ The p-value of 0.189 indicates that the missingness of `description` does not de
   width="800"
   height="600"
   frameborder="0"
+  style="display: block; margin: 0 auto; padding: 0;"
 ></iframe>
+
 **Graph of Permutation Test for `rating`:**
 <iframe
   src="assets/nondependency_rating.html"
