@@ -43,7 +43,7 @@ To clean the dataset, the following steps were taken:
 
 ### Univariate Analysis
 
-<center><b>Distribution of Ratings</b></center>
+<center><strong>Distribution of Ratings</strong></center>
 
 [There goes a graph]
 
@@ -51,7 +51,7 @@ To clean the dataset, the following steps were taken:
 
 ### Bivariate Analysis
 
-<center><b>Relationship Between Cooking Time and Rating</b></center>
+<center><strong>Relationship Between Cooking Time and Rating</strong></center>
 
 [There goes a graph]
 
@@ -59,7 +59,7 @@ To clean the dataset, the following steps were taken:
 
 ### Interesting Aggregates
 
-<center><b>Average Rating and Cooking Time by Year</b></center>
+<center><strong>Average Rating and Cooking Time by Year</strong></center>
 
 |   year |   average_rating |   average_cooking_time |
 |-------:|-----------------:|-----------------------:|
