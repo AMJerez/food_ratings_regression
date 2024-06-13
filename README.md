@@ -7,7 +7,20 @@ The dataset used in this project consists of recipes and their corresponding use
 
 **Question:** What is the relationship between the cooking time and average rating of recipes?
 
-Readers should care about this dataset and question because understanding these relationships can help identify trends in user preferences and improve recipe recommendations. The dataset contains 83,782 rows with columns including `name`, `id`, `minutes`, `contributor_id`, `submitted`, `tags`, `nutrition`, `n_steps`, `steps`, `description`, `ingredients`, `n_ingredients`, and `rating`.
+Readers should care about this dataset and question because understanding these relationships can help identify trends in user preferences and improve recipe recommendations. The dataset contains 83,782 rows with columns including:
+- `name`
+- `id`
+- `minutes`
+- `contributor_id`
+- `submitted`
+- `tags`
+- `nutrition`
+- `n_steps`
+- `steps`
+- `description`
+- `ingredients`
+- `n_ingredients`
+- `rating`
 
 ## Data Cleaning and Exploratory Data Analysis
 
@@ -71,7 +84,7 @@ To analyze the dependency of missingness in the `description` column:
 - **Test Statistic:** The difference in mean ratings between the two groups.
 - **Significance Level:** α = 0.05
 
-[There goes a graph for permutation test results]
+[(Optional) There goes a graph for permutation test results]
 
 **Conclusion:** Since the p-value is 0.003, which is less than 0.05, we reject the null hypothesis. This suggests that there is a significant difference in the average ratings of recipes based on cooking time.
 
@@ -87,17 +100,54 @@ To analyze the dependency of missingness in the `description` column:
 
 ## Baseline Model
 
-The baseline model uses `n_ingredients` and `n_steps` as features to predict the `rating`.
+The baseline model is a simple linear regression model that uses `n_ingredients` and `n_steps` as features to predict the `rating`. These features were chosen because they are indicative of the complexity of a recipe and could potentially influence user ratings.
 
-**Baseline Model Mean Absolute Error:** 0.4615540502473202
+**Features:**
+- `n_ingredients` (Quantitative): Number of ingredients in the recipe.
+- `n_steps` (Quantitative): Number of steps required to prepare the recipe.
+
+No ordinal or nominal features were included in this baseline model, and thus no encoding was necessary.
+
+The data was split into training and testing sets using an 80-20 split. The model was trained using the training set, and its performance was evaluated on the test set.
+
+**Baseline Model Mean Absolute Error (MAE):** 0.4615540502473202
+
+**Evaluation:**
+The baseline model's performance, with a MAE of 0.4615540502473202, serves as a reference point for further model improvements. While this MAE indicates a reasonable level of accuracy, there is potential for improvement by incorporating additional features and more complex modeling techniques. Therefore, I believe the current model is a good starting point, but further enhancements are necessary to achieve better predictive performance.
 
 ## Final Model
 
-The final model improves upon the baseline model by engineering new features and using a Gradient Boosting Regressor.
+### Features Added
+For the final model, additional features were engineered and included in the model to capture more information about the recipes:
+- `log_minutes` (Quantitative): The log transformation of the `minutes` feature, which helps to normalize the distribution and reduce the effect of outliers.
+- `hours` (Quantitative): The `minutes` feature converted to hours for easier interpretation.
+- `year` (Quantitative): The year the recipe was submitted, which can capture trends over time.
+- Polynomial features of `n_steps` and `hours`: Interaction terms and polynomial features were included to capture non-linear relationships between these features and the rating.
 
-**Best parameters for Gradient Boosting:** {'model__learning_rate': 0.1, 'model__max_depth': 3, 'model__n_estimators': 100}
+These features were chosen because they provide a more comprehensive understanding of the recipes' characteristics and their potential impact on user ratings.
 
-**Final Model Mean Absolute Error:** 0.45911961152511016
+### Modeling Algorithm
+The final model chosen was a Gradient Boosting Regressor, which is an ensemble learning method that builds multiple decision trees in a sequential manner to improve performance.
+
+**Hyperparameters Tuned:**
+- `n_estimators`: Number of boosting stages to be run.
+- `max_depth`: Maximum depth of the individual regression estimators.
+- `learning_rate`: Step size at each iteration while moving toward a minimum of the loss function.
+
+**Best Parameters Found:**
+- `model__learning_rate`: 0.1
+- `model__max_depth`: 3
+- `model__n_estimators`: 100
+
+These parameters were selected using GridSearchCV, which performed an exhaustive search over specified parameter values for an estimator.
+
+### Performance
+**Final Model Mean Absolute Error (MAE):** 0.45911961152511016
+
+**Evaluation:**
+The final model's performance, with a MAE of 0.45911961152511016, shows a slight improvement over the baseline model's MAE of 0.4615540502473202. This improvement, though modest, indicates that the additional features and the use of a more sophisticated modeling algorithm have helped capture more information about the recipes, leading to better predictions. The Gradient Boosting Regressor, with its ability to handle complex interactions and non-linearities, contributed to this improved performance.
+
+[(Optional) There goes a graph]
 
 ## Fairness Analysis
 
