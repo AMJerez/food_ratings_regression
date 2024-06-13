@@ -45,7 +45,12 @@ To clean the dataset, the following steps were taken:
 
 <center><strong>Distribution of Ratings</strong></center>
 
-[There goes a graph]
+<iframe
+  src="assets/distribution_of_ratings.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 **Interpretation:** The histogram of ratings shows that most recipes tend to have high ratings, indicating user satisfaction.
 
@@ -53,9 +58,14 @@ To clean the dataset, the following steps were taken:
 
 <center><strong>Relationship Between Cooking Time and Rating</strong></center>
 
-[There goes a graph]
+<iframe
+  src="assets/cooking_time_and_rating.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
-**Interpretation:** The scatter plot and box plot reveal the relationship between cooking time and ratings. It appears that recipes with shorter cooking times have a wide range of ratings, while longer cooking times might affect the ratings differently.
+**Interpretation:** The scatter plot reveal the relationship between cooking time and ratings. It appears that recipes with shorter cooking times have a wide range of ratings, while longer cooking times might affect the ratings differently.
 
 ### Interesting Aggregates
 
@@ -75,15 +85,45 @@ To clean the dataset, the following steps were taken:
 
 ### NMAR Analysis
 
-The `description` column in the dataset is likely NMAR (Not Missing At Random) because the presence or absence of descriptions may depend on whether the contributor chose to provide one. This behavior is inherent to the data generation process.
+The `description` column in the dataset is likely NMAR (Not Missing At Random) because the presence or absence of descriptions may depend on whether the contributor chose to provide one. This behavior is inherent to the data generation process. Additional data that could explain the missingness might include the length of the recipe or the contributor's activity level on the platform, which could make the missingness MAR (Missing At Random).
 
 ### Missingness Dependency
 
-To analyze the dependency of missingness in the `description` column:
-- **Dependent on `n_ingredients`**: The p-value of 0.002 indicates that the missingness of `description` depends on the number of ingredients.
-- **Non-dependent on `rating`**: The p-value of 0.204 indicates that the missingness of `description` does not depend on the rating.
+To analyze the dependency of missingness in the `description` column, permutation tests were performed.
 
-[There goes a graph for permutation tests]
+#### Dependent on `n_ingredients`
+The p-value of 0.002 indicates that the missingness of `description` depends on the number of ingredients. This suggests that recipes with more ingredients are less likely to have missing descriptions, possibly because more complex recipes encourage contributors to provide detailed descriptions.
+
+#### Non-dependent on `rating`
+The p-value of 0.189 indicates that the missingness of `description` does not depend on the rating. This suggests that whether a recipe has a description or not is independent of how users rate the recipe.
+
+**Permutation Test Results:**
+
+**Test for Dependency on `n_ingredients`:**
+- Observed Difference: -1.4723927615771073
+- P-value: 0.002
+
+**Test for Non-Dependency on `rating`:**
+- Observed Difference: -0.09867670120509064
+- P-value: 0.189
+
+**Graph of Permutation Test for `n_ingredients`:**
+<iframe
+  src="assets/dependency_n_ingredients.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+**Graph of Permutation Test for `rating`:**
+<iframe
+  src="assets/nondependency_rating.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+The results of these tests are significant for `n_ingredients`, indicating that the missingness of the `description` column is dependent on the number of ingredients but not on the rating. This insight helps in understanding the data generation process and can guide further data cleaning and analysis steps.
 
 ## Hypothesis Testing
 
