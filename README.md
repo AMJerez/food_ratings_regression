@@ -1,5 +1,5 @@
 # Exploring the Relationship Between Recipe Features and Ratings: A Predictive Modeling Approach
-### By Allison Jerez
+**By Allison Jerez**
 
 ## Introduction
 Provide an introduction to your dataset, and clearly state the one question your project is centered around. Why should readers of your website care about the dataset and your question specifically? Report the number of rows in the dataset, the names of the columns that are relevant to your question, and descriptions of those relevant columns.
@@ -17,6 +17,7 @@ Clearly state a pair of hypotheses and perform a hypothesis test or permutation 
 
 ## Framing a Prediction Problem
 Clearly state your prediction problem and type (classification or regression). If you are building a classifier, make sure to state whether you are performing binary classification or multiclass classification. Report the response variable (i.e. the variable you are predicting) and why you chose it, the metric you are using to evaluate your model and why you chose it over other suitable metrics (e.g. accuracy vs. F1-score). Justify what information you would know at the “time of prediction” and only train your model using those features.
+
 [This is a Tester for the Graph]
 
 ## Baseline Model
